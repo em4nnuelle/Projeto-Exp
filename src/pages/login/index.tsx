@@ -12,29 +12,32 @@ import {
 
 import { style } from "./styles";
 import Logo from '../../assets/logo.png';
-import {MaterialIcons} from '@expo/vector-icons';
+import {MaterialIcons, Octicons} from '@expo/vector-icons';
 import { themas } from "../../global/themes";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button"
 
 export default function Login(){
     const [email, setEmail]=useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(true);
     const [loading, setLoading] = useState(false)
 
     async function getLogin(){
+        setLoading(true);
         try {
-            setLoading(true)
-
             if(!email || !password){
-                return Alert.alert('Atenção','Informe os campos obrigatórios.')
+                setLoading(false);
+                return Alert.alert('Atenção','Informe os campos obrigatórios.');
             }
-
             setTimeout(()=>{
                 Alert.alert('Logado com sucesso!')
                 setLoading(false)
             },2000) 
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            setLoading(false);
         }
     }
 
@@ -51,40 +54,25 @@ export default function Login(){
                 </Text>
             </View>
             <View style={style.boxMid}>
-                <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
-                <View style={style.BoxInput}>
-                    <TextInput 
-                        style={style.input}
-                        value={email}
-                        onChangeText={setEmail}
-                    />
-                    <MaterialIcons 
-                        name='email'
-                        size={20}
-                        color={themas.colors.gray}
-                    />
-                </View>
-                    <Text style={style.titleInput}>SENHA</Text>
-                    <View style={style.BoxInput}>
-                    <TextInput 
-                        style={style.input}
-                        value={password}
-                        onChangeText={setPassword}
-                    />
-                    <MaterialIcons 
-                        name='remove-red-eye'
-                        size={20}
-                        color={themas.colors.gray}
-                    />
-                </View>
+                <Input
+                    value={email}
+                    onChangeText={setEmail}
+                    title="ENDEREÇO DE E-MAIL"
+                    IconRight={MaterialIcons}
+                    IconRightName="email"
+                />
+                <Input
+                    onChangeText={setPassword}
+                    value={password}
+                    title="SENHA"
+                    IconRight={Octicons}
+                    IconRightName={showPassword?"eye-closed":"eye"}
+                    secureTextEntry={showPassword}
+                    onIconRightPress={()=>setShowPassword(!showPassword)}
+                />
             </View>
             <View style={style.boxBotton}>
-                <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
-                    {loading?
-                        <ActivityIndicator />
-                    :
-                        <Text style={style.textButton}>Entrar</Text>}
-                </TouchableOpacity>
+                <Button text="ENTRAR" loading={loading} onPress={()=>getLogin()}/>
             </View>
             <Text style={style.textBottom}>Não possui conta?</Text>
             <Text style={style.textBottomCreate}> Clique aqui.</Text>
