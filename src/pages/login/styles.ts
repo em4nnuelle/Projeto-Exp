@@ -11,20 +11,17 @@ export const style = StyleSheet.create({
     boxTop:{
         height:Dimensions.get('window').height/3,
         width:'100%',
-        //backgroundColor:'red',
         alignItems:'center',
         justifyContent:'center'
     },
     boxMid:{
         height:Dimensions.get('window').height/4,
         width:'100%',
-        //backgroundColor:'green',
         paddingHorizontal:37
     },
     boxBotton:{
         height:Dimensions.get('window').height/3,
         width:'100%',
-        //backgroundColor:'blue',
         alignItems:'center',
         justifyContent:'center'
     },
@@ -42,7 +39,7 @@ export const style = StyleSheet.create({
         height:50,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor: themas.colors.primary,
+        backgroundColor: themas.Colors.primary,
         borderRadius:40,
         shadowColor: "#000",
         shadowOffset: {
@@ -60,10 +57,10 @@ export const style = StyleSheet.create({
     },
     textBottom:{
         fontSize: 16,
-        color:themas.colors.gray
+        color:themas.Colors.gray
     },
     textBottomCreate:{
         fontSize: 16,
-        color:themas.colors.primary
+        color:themas.Colors.primary
     }
 })

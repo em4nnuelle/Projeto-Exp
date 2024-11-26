@@ -7,7 +7,7 @@ export const style = StyleSheet.create({
         height:50,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor: themas.colors.primary,
+        backgroundColor: themas.Colors.primary,
         borderRadius:40,
         shadowColor: "#000",
         shadowOffset: {

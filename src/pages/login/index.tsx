@@ -16,8 +16,12 @@ import {MaterialIcons, Octicons} from '@expo/vector-icons';
 import { themas } from "../../global/themes";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button"
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 
 export default function Login(){
+
+    const navigation = useNavigation<NavigationProp<any>>();
+
     const [email, setEmail]=useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(true);
@@ -30,6 +34,9 @@ export default function Login(){
                 setLoading(false);
                 return Alert.alert('Atenção','Informe os campos obrigatórios.');
             }
+
+            navigation.reset({routes:[{name:"BottomRoutes"}]})
+
             setTimeout(()=>{
                 Alert.alert('Logado com sucesso!')
                 setLoading(false)
