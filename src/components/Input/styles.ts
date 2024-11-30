@@ -11,8 +11,8 @@ export const style = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         paddingHorizontal:5,
-        backgroundColor:themas.colors.lightGray,
-        borderColor: themas.colors.lightGray
+        backgroundColor:themas.Colors.lightGray,
+        borderColor: themas.Colors.lightGray
     },
     input:{
         height:'100%',
@@ -21,7 +21,7 @@ export const style = StyleSheet.create({
     },
     titleInput:{
         marginLeft:5,
-        color:themas.colors.gray,
+        color:themas.Colors.gray,
         marginTop:20
     },
     Icon:{
