@@ -50,7 +50,7 @@ Gerenciamento de Dependências
 6.7 yarn
 yarn é um gerenciador de pacotes (alternativo ao npm), utilizado para instalar e gerenciar as dependências do seu projeto. Com ele, você pode instalar pacotes mais rapidamente, além de garantir maior consistência e controle nas versões dos pacotes.
 
-6. Conclusão
+7. Conclusão
     
 Este projeto de extensão permitiu aplicar e expandir os conhecimentos adquiridos na disciplina Programação para Dispositivos Móveis em Android, com foco na criação de um protótipo funcional utilizando TypeScript e JavaScript. O protótipo desenvolvido demonstra a aplicação de conceitos de design de UI/UX, navegação entre telas e integração com APIs, além de ser uma base para o desenvolvimento de futuros aplicativos móveis.
 
