@@ -57,7 +57,7 @@ export default function Login(){
                     resizeMode="contain"
                 />
                 <Text style={style.text}>
-                    Bem-vindo ao MeuRemedio!
+                    Bem-vindo ao BemViver!
                 </Text>
             </View>
             <View style={style.boxMid}>

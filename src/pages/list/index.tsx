@@ -12,17 +12,23 @@ type PropCard = {
     item: number,
     title: string,
     description: string,
-    flag: 'urgente'|'opcional'
+    flag: 'importante'|'agendar'
 }
 
 const data:Array<PropCard>=
 [
     {
         item:0,
-        title:'Realizar',
-        description: 'página 10 a 20',
-        flag:'urgente'
-    }
+        title:'Consulta',
+        description: 'Dia 12/12/24',
+        flag:'importante'
+    },
+    {
+        item:1,
+        title:'Receita medicamento',
+        description: 'Dia 19/12/24',
+        flag:'agendar'
+    },
 ]
 
 export default function List (){
@@ -38,7 +44,7 @@ export default function List (){
                             <Text style={style.descriptionCard}>{item.description}</Text>
                         </View>
                     </View>
-                    <Flag caption="Urgente" color={themas.Colors.red}/>
+                    <Flag caption="Importante" color={themas.Colors.red}/>
                 </View>
             </TouchableOpacity>
         )
